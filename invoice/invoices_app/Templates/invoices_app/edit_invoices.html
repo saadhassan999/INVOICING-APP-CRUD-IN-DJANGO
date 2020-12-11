@@ -1,0 +1,11 @@
+{% extends 'base_layout.html' %}
+
+{% block Title %} Edit Invoice {% endblock %}
+
+{% block Content%}
+    <form method="POST">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit">Update</button>
+    </form>
+{% endblock %}

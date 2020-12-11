@@ -1,0 +1,39 @@
+{% extends 'base_layout.html' %}
+
+{% block Title %} Invoices List {% endblock %}
+
+{% block Content %} 
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Item</th>
+                <th>Description</th>
+                <th>Unit Cost</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for invoice in invoices %}
+                <tr>
+                    <th>
+                        {{invoice.id}}
+                    </th>
+                    <td>
+                        {{invoice.item}}
+                    </td>
+                    <td>
+                        {{invoice.description}}
+                    </td>
+                    <td>
+                        ${{invoice.unit_cost}}
+                    </td>
+                    <td>
+                        <a href="{% url 'invoices_app:editInvoice' invoice.id %}">Edit</a> |
+                        <a href="{% url 'invoices_app:deleteInvoice' invoice.id %}">Delete</a>
+                    </td>                    
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

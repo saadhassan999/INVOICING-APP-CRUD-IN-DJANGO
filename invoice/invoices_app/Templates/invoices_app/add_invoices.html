@@ -1,0 +1,11 @@
+{% extends 'base_layout.html' %}
+
+{% block Title %} Add Invoices {% endblock %}
+
+{% block Content %} 
+    <form method="POST">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit">Add</button>
+    </form>
+{% endblock %}
