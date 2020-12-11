@@ -3,6 +3,9 @@
 {% block Title %} Invoices List {% endblock %}
 
 {% block Content %} 
+    <div>
+       <a href="{% url 'invoices_app:addInvoices' %}">Add New Invoice</a>
+    </div>
     <table id="myTable">
         <thead>
             <tr>
